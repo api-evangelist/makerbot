@@ -1,0 +1,16 @@
+generated: '2026-07-20'
+method: searched
+source: live probe of https://api.thingiverse.com
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: 'Bearer token auth; OAuth 2.0 authorize endpoint at thingiverse.com/login/oauth/authorize; WWW-Authenticate: Bearer V1'
+  - id: cors
+    conforms: true
+    evidence: 'Access-Control-Allow-Origin: * with full method set returned by api.thingiverse.com'
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: 'errors returned as custom application/json {error,code,type}, not application/problem+json'
+  - id: openid-connect
+    conforms: false
+    evidence: 'no /.well-known/openid-configuration published'

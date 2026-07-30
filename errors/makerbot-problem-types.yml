@@ -1,0 +1,23 @@
+generated: '2026-07-20'
+method: searched
+source: live probe of https://api.thingiverse.com
+format: custom-json
+envelope:
+  description: >-
+    The MakerBot Thingiverse REST API returns errors as a flat JSON object with
+    a human-readable message, a numeric HTTP code, and a machine-readable type
+    string. It does NOT use RFC 9457 application/problem+json.
+  content_type: application/json
+  fields:
+    error: Human-readable error message
+    code: Numeric HTTP status code
+    type: Machine-readable error identifier (e.g. NO_TOKEN_PROVIDED)
+problems:
+  - status: 401
+    type: NO_TOKEN_PROVIDED
+    title: Unauthorized access. No authentication was provided.
+    remediation: >-
+      Supply a Bearer access token in the Authorization header (App Token or
+      OAuth 2.0 user token). See https://www.thingiverse.com/developers
+    example: '{"error":"Unauthorized access. No authentication was provided.","code":401,"type":"NO_TOKEN_PROVIDED"}'
+    evidence: 'observed live on GET https://api.thingiverse.com/categories and /popular without a token'

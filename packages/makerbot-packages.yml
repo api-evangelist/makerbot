@@ -1,0 +1,43 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  github.com/makerbot org + RubyGems/npm registries; first-party Thingiverse API
+  client libraries published under MakerBot's own GitHub organization.
+packages:
+  - language: ruby
+    registry: rubygems
+    name: thingiverse
+    version: 0.0.8
+    url: https://rubygems.org/gems/thingiverse
+    source: https://github.com/makerbot/thingiverse-ruby
+    install: gem install thingiverse
+    official: true
+    note: Thingiverse API Ruby Gem, published in the makerbot GitHub org.
+  - language: javascript
+    registry: npm
+    name: thingiverse-js
+    version: 1.0.1
+    url: https://www.npmjs.com/package/thingiverse-js
+    source: https://github.com/makerbot/thingiverse-js
+    install: npm install thingiverse-js
+    official: true
+    note: Easy Thingiverse API requests for Node.js.
+  - language: php
+    registry: github
+    name: thingiverse-php
+    url: https://github.com/makerbot/thingiverse-php
+    source: https://github.com/makerbot/thingiverse-php
+    install: composer require makerbot/thingiverse-php
+    official: true
+    note: >-
+      First-party PHP wrapper for the Thingiverse API (source on GitHub; not
+      published to Packagist by MakerBot).
+  - language: javascript
+    registry: github
+    name: thingiverse-iframe-sdk
+    url: https://github.com/makerbot/thingiverse-iframe-sdk
+    source: https://github.com/makerbot/thingiverse-iframe-sdk
+    official: true
+    note: >-
+      Iframe JavaScript SDK for embedding Thingiverse; client-side embed helper
+      distinct from the REST client libraries above.

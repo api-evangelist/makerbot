@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: searched
+source: live probe of https://api.thingiverse.com + https://www.thingiverse.com/developers
+docs: https://www.thingiverse.com/developers
+summary:
+  types: [oauth2, http]
+  api_key_in: []
+  oauth2_flows: [authorizationCode, implicit]
+  notes: >-
+    The MakerBot Thingiverse REST API requires a Bearer access token on every
+    request. Unauthenticated requests return HTTP 401 with
+    {"error","code":401,"type":"NO_TOKEN_PROVIDED"}. The WWW-Authenticate
+    response header is "Bearer V1". Tokens are obtained either as per-application
+    App Tokens issued when registering an app, or via the OAuth 2.0
+    authorization flow for acting on behalf of a Thingiverse user.
+schemes:
+  - name: BearerToken
+    type: http
+    scheme: bearer
+    bearerFormat: opaque
+    location: header
+    header: Authorization
+    evidence: 'WWW-Authenticate: Bearer V1 header returned by api.thingiverse.com'
+    sources: [live probe https://api.thingiverse.com/things/1]
+  - name: OAuth2
+    type: oauth2
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://www.thingiverse.com/login/oauth/authorize
+        tokenUrl: https://www.thingiverse.com/login/oauth/token
+        note: >-
+          authorizationUrl verified live (302 -> /login when unauthenticated);
+          tokenUrl per Thingiverse developer docs.
+      - flow: implicit
+        authorizationUrl: https://www.thingiverse.com/login/oauth/authorize
+    evidence: 'OAuth authorize endpoint redirects to Thingiverse login'
+    sources: [live probe https://www.thingiverse.com/login/oauth/authorize]

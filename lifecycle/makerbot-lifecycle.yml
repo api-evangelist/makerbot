@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  live probe of api.thingiverse.com (version token) + status.ultimaker.com
+  (MakerBot is part of UltiMaker, which operates the shared status page).
+api: Thingiverse REST API (MakerBot)
+versioning:
+  scheme: token-versioned
+  current: V1
+  evidence: 'WWW-Authenticate: Bearer V1 header returned by api.thingiverse.com'
+  note: >-
+    The API surface is unversioned in the URL path (https://api.thingiverse.com);
+    the "V1" token in the WWW-Authenticate header is the only version signal.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No published deprecation policy or RFC 8594 Sunset/Deprecation header support was found.
+sla:
+  url: null
+  uptime_target: null
+status_page: https://status.ultimaker.com
+status_page_note: >-
+  MakerBot merged with Ultimaker to form UltiMaker; the operational status page is
+  hosted at status.ultimaker.com (HTTP 200 verified live).
+deprecated_operations: []

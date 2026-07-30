@@ -1,0 +1,21 @@
+# MakerBot
+
+> MakerBot is a desktop 3D printer manufacturer (now part of UltiMaker) and operator of Thingiverse, the largest online community for discovering, sharing, and downloading 3D-printable models. MakerBot's developer surface is the Thingiverse REST API, which exposes things, files, images, users, collections, categories, and search over a Bearer-token (OAuth 2.0) authenticated JSON API.
+
+## APIs
+
+- [Thingiverse REST API](https://www.thingiverse.com/developers): JSON REST API at https://api.thingiverse.com for browsing and managing Thingiverse things, files, images, users, collections, and search. Bearer-token / OAuth 2.0 authenticated.
+
+## Docs
+
+- [Thingiverse Developers](https://www.thingiverse.com/developers): API documentation, app registration, and authentication.
+- [MakerBot](https://www.makerbot.com): Company website.
+
+## Artifacts
+
+- [Authentication profile](authentication/makerbot-authentication.yml): OAuth 2.0 Bearer token model.
+- [Error catalog](errors/makerbot-problem-types.yml): custom JSON error envelope.
+- [API conventions](conventions/makerbot-conventions.yml): auth, CORS, pagination, versioning, error shape.
+- [Conformance](conformance/makerbot-conformance.yml): OAuth2, CORS, RFC 9457 posture.
+- [MCP candidate](mcp/makerbot-mcp.yml): candidate MCP tool list derived from verified endpoints.
+- [Domain security](security/makerbot-domain-security.yml): TLS/DNS posture probe.
