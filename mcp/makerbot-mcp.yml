@@ -2,25 +2,29 @@ generated: '2026-07-20'
 method: derived
 status: candidate
 source: live-verified endpoints on https://api.thingiverse.com (no OpenAPI published)
-note: >-
-  No official MakerBot / Thingiverse MCP server was found. This is a CANDIDATE
-  tool list derived from live-verified Thingiverse REST API endpoints, to seed a
-  future MCP wrapper. Every tool maps to an endpoint confirmed reachable (each
-  returned a structured 401 without a token, i.e. the route exists).
+note: No official MakerBot / Thingiverse MCP server was found. This is a CANDIDATE tool list derived from
+  live-verified Thingiverse REST API endpoints, to seed a future MCP wrapper. Every tool maps to an endpoint
+  confirmed reachable (each returned a structured 401 without a token, i.e. the route exists).
 server:
   name: makerbot-thingiverse
   transport: http
   auth: Bearer token (App Token or OAuth 2.0)
 tools:
-  - name: get_categories
-    description: List Thingiverse thing categories
-    source_operation: GET https://api.thingiverse.com/categories
-  - name: search_things
-    description: Search Thingiverse for things matching a term
-    source_operation: GET https://api.thingiverse.com/search/{term}
-  - name: get_thing
-    description: Get a single thing by id
-    source_operation: GET https://api.thingiverse.com/things/{id}
-  - name: list_popular_things
-    description: List popular things
-    source_operation: GET https://api.thingiverse.com/popular
+- name: get_categories
+  description: List Thingiverse thing categories
+  source_operation: GET https://api.thingiverse.com/categories
+- name: search_things
+  description: Search Thingiverse for things matching a term
+  source_operation: GET https://api.thingiverse.com/search/{term}
+- name: get_thing
+  description: Get a single thing by id
+  source_operation: GET https://api.thingiverse.com/things/{id}
+- name: list_popular_things
+  description: List popular things
+  source_operation: GET https://api.thingiverse.com/popular
+deployment:
+  mode: none
+  verified: derived
+  tools: 4
+  checked: '2026-08-12'
+  source: catalog MCP census
