@@ -53,6 +53,15 @@ tags:
 - Thingiverse
 - Maker
 - Hardware
+- Design
+- Community
+tags_raw:
+- Company
+- 3D Printing
+- Manufacturing
+- Thingiverse
+- Maker
+- Hardware
 - Designs
 - Community
 maintainers:
@@ -69,6 +78,11 @@ apis:
   humanURL: https://www.thingiverse.com/developers
   baseURL: https://api.thingiverse.com
   tags:
+  - 3D Printing
+  - Thingiverse
+  - Design
+  - Search
+  tags_raw:
   - 3D Printing
   - Thingiverse
   - Designs
